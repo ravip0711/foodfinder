@@ -1,4 +1,11 @@
 <h1>FoodFinder</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
-<h2>Hello</h2>
+<h2>Enter your zip code to find a place to eat!</h2>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:zip_code, "Zip Code:") %>
+  <%= text_field_tag(:zip_code) %>
+  <%= submit_tag("Pick One") %>
+  <%= submit_tag("List All") %>
+<% end %>

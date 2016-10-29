@@ -38,6 +38,10 @@ gem 'yelp', require: 'yelp'
 # Use Figaro to exclude secret keys from git
 gem "figaro"
 
+group :development do
+  gem 'meta_request'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
