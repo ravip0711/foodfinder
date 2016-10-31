@@ -1,6 +1,25 @@
-<h1>Hello this is search</h1>
-
-<%= link_to "#{@random_restaurant.name}", "#{@random_restaurant.url}", :target => "_blank" %>
-<%= image_tag(@random_restaurant.image_url) %>
-
-<%= link_to "Home", root_path %>
+<div class="text-center">
+  <h1>Random Food Pick:</h1>
+  <div class="main-content">
+    <div>
+      <%= link_to "#{@random_restaurant.url}", :target => "_blank" do  %>
+        <%= image_tag @random_restaurant.image_url, class: "img-responsive center-block" %>
+        <h2><%= @random_restaurant.name %></h2>
+      <% end %>
+    </div>
+    <div>
+      <div class="phone-padding">
+        <%= icon('phone-square') %>
+        <a href="callto:#{@random_restaurant.phone}">Ph: <%= @random_restaurant.display_phone %></a>
+      </div>
+        <%= icon('map-marker') %>
+        <a href="http://maps.google.com/?q=<%= @random_restaurant.location.display_address %>" target= "_blank">
+        <%= @random_restaurant.location.display_address[0] %></br>
+        <%= @random_restaurant.location.display_address[1] %></br>
+        <%= @random_restaurant.location.display_address[2] %></br>
+        <%= @random_restaurant.location.display_address[3] %></br>
+        </a>
+    </div>
+    <%= link_to "Home", root_path, class: "btn btn-default home-btn" %>
+  </div>
+</div>

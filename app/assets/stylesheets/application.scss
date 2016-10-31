@@ -13,3 +13,17 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap-custom";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.main-content {
+  padding-top: 30px;
+}
+
+.home-btn {
+  margin-top: 30px;
+}
+
+.phone-padding {
+  padding: 20px 0 20px 0;
+}

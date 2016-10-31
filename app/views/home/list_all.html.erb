@@ -1,8 +1,13 @@
-<h1>List of All Restaurants</h1>
-
-<% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %></br>
-<% end %>
-
-
-<%= link_to "Home", root_path %>
+<div class="text-center">
+  <h1>List of All Restaurants</h1>
+  <div class="main-content">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="text-left">
+        <% @restaurants.each do |restaurant| %>
+          <%= icon('yelp') %> <a href="<%= restaurant.url %>" target= "_blank"><%= restaurant.name %></a></br>
+        <% end %>
+      </div>
+      <%= link_to "Home", root_path, class: "btn btn-default home-btn" %>
+    </div>
+  </div>
+</div>

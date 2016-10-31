@@ -1,11 +1,22 @@
-<h1>FoodFinder</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="text-center">
+  <h1><%= icon('cutlery') %> FoodFinder <small>by Yelp</small></h1>
+  <div class="main-content">
+    <h2>Enter your zip code to find a place to eat!</h2>
+    <div class="form-horizontal">
+      <%= form_tag("/search", method: "get") do %>
+        <div class="form-group">
+          <div class="col-sm-4 col-sm-offset-4">
+            <%= text_field_tag(:zip_code, nil, pattern: "[0-9]{5}", maxlength: "5", title: "Please use 5 numerical digits", placeholder: "Zip Code", required: true, autofocus: true, class: "form-control input-lg") %>
+          </div>
+        </div>
 
-<h2>Enter your zip code to find a place to eat!</h2>
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:zip_code, "Zip Code:") %>
-  <%= text_field_tag(:zip_code) %>
-  <%= submit_tag("Pick One") %>
-  <%= submit_tag("List All") %>
-<% end %>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= submit_tag "Surprise Me", class: "btn btn-primary" %>
+            <%= submit_tag "List All", class: "btn btn-secondary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

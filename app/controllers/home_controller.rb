@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   end
 
   def search
-    if params[:commit] == "List All"
+    
+    if params[:commit] == "List All" # Checks which submit button is pressed
       redirect_to list_all_path(:zip_code => params[:zip_code])
     else
       restaurant_search = Yelp.client.search(params[:zip_code], {term: 'food'})
