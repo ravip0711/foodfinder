@@ -40,9 +40,6 @@ gem 'yelp', require: 'yelp'
 # Use Figaro to exclude secret keys from git
 gem "figaro"
 
-# Use Rails 12 Factor serving assets properly on heroku
-gem 'rails_12factor', group: :production
-
 group :development do
   gem 'meta_request'
 end
